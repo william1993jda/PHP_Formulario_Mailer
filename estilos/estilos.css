@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body {
+    margin: 0;
+}
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+label{
+    font-family: 'Monoton', Roboto;
+}
+
+footer{
+    background-color: #E9ECEF;
+}
+
+small{
+    color: red;
+}
+
+textarea{
+    width: 400px;
+}
+
+#mensagem{
+    border-radius: .25rem !important;
+
+}
+
+#Nome-error{
+    color: red;
+    font-size: 0.70rem;
+}
+
+#Email-error{
+    color: red;
+    font-size: 0.70rem;
+}
+
+#Fone-error{
+    color: red;
+    font-size: 0.70rem;
+}
+
+#Assunto-error{
+    color: red;
+    font-size: 0.70rem;
+}
+
+#mensagem-error{
+    color: red;
+    font-size: 0.70rem;
+}
