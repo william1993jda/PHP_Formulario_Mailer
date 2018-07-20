@@ -8,13 +8,7 @@ try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $stmt = $conn->prepare('SELECT * FROM pessoa');
     $stmt->execute(array('id' => $id));
-
-    if ($conn){
-        echo "<h1>deu certo</h1>";
-    }else{
-        echo "Deu ruim";
-    }
-
+    
     while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         print_r($row['nome']."<br>");
     }
