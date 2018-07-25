@@ -38,9 +38,10 @@ if (isset($_POST['logar'])){
             $_SESSION['sessaoemail'] = $login;
             $_SESSION['sessaosenha'] = $senha;
 
-            echo "Logado com sucesso";
+//            echo "Logado com sucesso";
 
-            header("Refresh:3, Formulario.php");
+//            header("Refresh:3, Formulario.php");
+            header("location: Formulario.php");
 
         }else{
             unset ($_SESSION['sessaoemail']);
@@ -53,23 +54,3 @@ if (isset($_POST['logar'])){
         var_dump($e->getMessage());
     }
 }
-
-//    while($dados = $stmt->fetch(PDO::FETCH_ASSOC)) {
-//        session_start();
-//        $_SESSION['email'] = $login;
-//        $_SESSION['senha'] = $senha;
-//    }
-//
-//}else {
-//    //Destrói
-//    session_destroy();
-//
-//    //Limpa
-//    unset ($_SESSION['email']);
-//    unset ($_SESSION['senha']);
-//
-//    //Redireciona para a página de autenticação
-//    header('location:index.php');
-//}
-
-//Caso o usuário não esteja autenticado, limpa os dados e redireciona
