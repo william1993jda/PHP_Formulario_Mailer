@@ -1,5 +1,5 @@
-<?php require_once 'layout.php'?>
-<div class="container">
+<?php require_once 'layout.php';require_once 'login.php';session_start();if (!isset($_SESSION['sessaoemail']) && !isset($_SESSION['sessaosenha'])){session_destroy();header('location: index.php');}?>
+
     <div class="row">
         <div class="col-sm">
 
@@ -43,5 +43,5 @@
 
         </div>
     </div>
-</div>
+
 <?php require_once 'Footer.php'?>
