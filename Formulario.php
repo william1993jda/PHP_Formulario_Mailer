@@ -1,11 +1,15 @@
-<?php require_once 'layout.php';
+<?php
+
+require_once 'layout.php';
 require_once 'login.php';
+
 session_start();
 
 if (!isset($_SESSION['sessaoemail']) && !isset($_SESSION['sessaosenha'])){
     session_destroy();
-    header('location: areaRestrita.php');
+    header('location: aviso.php');
 }
+
 ?>
 
     <div class="row">

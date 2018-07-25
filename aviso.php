@@ -1,22 +1,14 @@
-
-<!doctype html>
-<html lang="pt">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1 style="color: red; padding: 10px; text-align: center">
-        Parabéns, seu teste funcionou,
-        <br>
-        agora continue estudando troxão!
-    </h1>
-</body>
-</html>
-
 <?php
-Header("refresh: 2;Formulario.html");
-?>
+
+require_once 'layout.php'; ?>
+<div class="card formularios" style="width: 18rem;">
+    <div class="alert-danger">
+        <h4 style="padding: 15px" class="text-center">Aviso!</h4>
+    </div>
+    <div class="card-body">
+        <p class="card-text">Para acessar essa área, você precisa estar logado!</p>
+        <hr>
+        <a href="index.php" class="btn btn-primary">Voltar</a>
+    </div>
+</div>
+<?php require_once 'Footer.php'; ?>
