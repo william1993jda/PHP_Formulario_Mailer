@@ -107,7 +107,7 @@ if ( $erro ) {
     /*Insira abaixo o email que irá receber a mensagem, o email que irá enviar (o mesmo da variável GUSER),
     o nome do email que envia a mensagem, o Assunto da mensagem e por último a variável com o corpo do email.*/
 
-    if (smtpmailer('outroexemplo@atit.com.br', 'exemplo@gmail.com', 'Darvin Rules', 'Testando o Mailer',
+    if (smtpmailer('outroexemplo@gmail.com', 'exemplo@gmail.com', 'Darvin Rules', 'Testando o Mailer',
         $Vai)) {
         echo '<div class="alert alert-success jumbotron" role="alert">'.$Nome.', seu E-mail foi enviado com sucesso!<hr><span>Nome: </span>'.$Nome.'<br><span>Email: </span>'.$Email.'<br><span>Assunto: </span>'.$Assunto.'<br><span>Mensagem: </span>'.$Mensagem.'</div>';
         echo $voltar;
