@@ -1,4 +1,5 @@
-<?php require_once 'login.php';session_start();?>
+<?php require_once 'login.php';?>
+<?php require_once 'consultas.php';?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -18,7 +19,10 @@
 <nav class="navbar navbar-light bg-light">
     <a class="navbar-brand" href="http://php.net/" target="_blank"><img style="width:50px" src="img/icon-php1-1.png" alt=""> Projeto PHP</a>
     <?php if (isset($_SESSION['sessaoemail']) && isset($_SESSION['sessaosenha'])): ?>
-    <a class="btn btn-outline-danger float-left" href="logout.php">Sair</a>
+        <div class="control-group float-right">
+            <a class="btn btn-outline-danger" href="logout.php">Sair</a>
+            <a class="btn btn-outline-primary" href="editar.php?id=<?=$pessoa['id'];?>">Editar</a>
+        </div>
     <?php endif; ?>
 </nav>
 <div class="container">

@@ -5,10 +5,11 @@ require_once 'layout.php'; ?>
     <div class="alert-danger">
         <h4 style="padding: 15px" class="text-center">Aviso!</h4>
     </div>
+
     <div class="card-body">
         <p class="card-text">Para acessar essa área, você precisa estar logado!</p>
         <hr>
-        <a href="index.php" class="btn btn-primary">Voltar</a>
+        <a href="index.php" class="btn btn-primary float-right">Voltar</a>
     </div>
 </div>
 <?php require_once 'Footer.php'; ?>
