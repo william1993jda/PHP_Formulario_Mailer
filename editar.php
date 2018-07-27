@@ -7,6 +7,7 @@ if (!isset($_SESSION['sessaoemail']) && !isset($_SESSION['sessaosenha'])){
     session_destroy();
     header('location: aviso.php');
 }
+
 ?>
 <form style="margin-top: 15%;" action="insert.php" method="post" class="col-6 jumbotron">
     <img class="float-right" style="width: 65px; margin-top: -55px;" src="img/icon-php1-1.png" alt="">
