@@ -1,10 +1,5 @@
 <?php
 
-//if ($_GET){
-//    header('location: Formulario.php');
-//}
-
-
 //if (isset($_SESSION['sessaoemail']) && (isset($_SESSION['sessaosenha']))){
 //    header('location: Formulario.php');
 //}else{
@@ -20,9 +15,9 @@ if (isset($_POST['logar'])){
     $login = trim($_POST['email']);
     $senha = trim($_POST['senha']);
 
-    $query = ('SELECT * FROM pessoa WHERE email = :email AND senha = :senha');
 
     try{
+        $query = ('SELECT * FROM pessoa WHERE email = :email AND senha = :senha');
         $stmt = $conn->prepare($query);
         $stmt->bindValue(":email", $login, PDO::PARAM_STR);
         $stmt->bindValue(":senha", $senha, PDO::PARAM_STR);
@@ -34,13 +29,13 @@ if (isset($_POST['logar'])){
             $login = ['email'];
             $senha = ['senha'];
 
-//            session_start();
+            //session_start();
             $_SESSION['sessaoemail'] = $login;
             $_SESSION['sessaosenha'] = $senha;
 
-//            echo "Logado com sucesso";
+            //echo "Logado com sucesso";
 
-//            header("Refresh:3, Formulario.php");
+            //header("Refresh:3, Formulario.php");
             header("location: Formulario.php");
 
         }else{

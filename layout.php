@@ -1,5 +1,5 @@
 <?php require_once 'login.php';?>
-<?php require_once 'consultas.php';?>
+<?php //require_once 'consultas.php';?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -29,7 +29,7 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                          <p style="padding-left: 10px;">Olá, <?=$pessoa['nome'];?></p>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="editar.php?id=<?=$pessoa['id'];?>">Editar</a>
+                            <a class="dropdown-item" href="editar.php?id=<?=$_SESSION['id'];?>">Editar</a>
                             <a class="dropdown-item"href="logout.php">Sair</a>
                         </div>
                     </li>

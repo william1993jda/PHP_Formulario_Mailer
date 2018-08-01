@@ -2,7 +2,6 @@
 
 require_once 'db.php';
 
-
 $nome  = isset($_POST['nome']) ? $_POST['nome'] : null;
 $email = isset($_POST['email']) ? $_POST['email'] : null;
 $senha = isset($_POST['senha']) ? $_POST['senha'] : null;

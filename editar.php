@@ -18,6 +18,8 @@ $stmt = $conn->prepare('SELECT * FROM pessoa WHERE id = :id');
 
 $stmt->bindParam(":id", $id);
 
+//var_dump($id);
+
 if ($stmt->execute()) {
     $stmt = $stmt->fetch(PDO::FETCH_ASSOC);
 } else {
@@ -75,7 +77,7 @@ if ($stmt->execute()) {
 
     <div class="form-group">
         <label for="senha">Senha:</label>
-        <input type="password" name="senha" class="form-control" value="<?=$stmt['senha']?>" id="senha" placeholder="******">
+        <input type="text" name="senha" class="form-control" value="<?=$stmt['senha']?>" id="senha" placeholder="******">
     </div>
 
     <div class="control-group float-right">
@@ -84,4 +86,3 @@ if ($stmt->execute()) {
     </div>
 </form>
 <?php require_once 'Footer.php'?>
-

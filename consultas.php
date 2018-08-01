@@ -1,22 +1,20 @@
 <?php
 
 require_once 'db.php';
-
+require_once 'login.php';
 $id    = trim($_POST['id']);
 $nome  = trim($_POST['nome']);
-$login = trim($_POST['email']);
+$div = $_SESSION['sessaoemail'];
 $senha = trim($_POST['senha']);
 
 try {
     $query = ("SELECT pessoa.id AS id, pessoa.nome AS nome, pessoa.senha AS senha, pessoa.email AS email FROM pessoa");
-    $stmt  = $conn->prepare($query);
-    $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-    $stmt->bindParam(':nome', $nome, PDO::PARAM_STR);
-    $stmt->bindParam(':email', $id, PDO::PARAM_STR);
-    $stmt->bindParam(':senha', $senha, PDO::PARAM_STR);
-    $stmt->execute();
+//    $query = ("SELECT * FROM pessoa WHERE email = '$login'");
+    $selecionaUsuario  = $conn->prepare($query);
+    $selecionaUsuario->bindParam(':email', $login, PDO::PARAM_STR);
+    $selecionaUsuario->execute();
 
-    foreach  ($stmt as $key => $pessoa){
+    foreach  ($selecionaUsuario as $key => $pessoa){
        $id    = $pessoa->id;
        $nome  = $pessoa->nome;
        $email = $pessoa->email;

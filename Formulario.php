@@ -14,23 +14,24 @@ if (!isset($_SESSION['sessaoemail']) && !isset($_SESSION['sessaosenha'])){sessio
 
                 <div class="form-group">
                     <label for="Nome">Nome:</label>
-                    <input class="form-control cor" type="text" name="Nome" id="Nome" size="35">
+                    <input class="form-control cor" type="text" name="Nome" id="Nome" size="35" placeholder="Seu nome">
                 </div>
 
                 <div class="form-group">
                     <label for="Email">Email:</label>
-                    <input type="email" class="form-control cor" name="Email" onblur="validarEmail()" onfocus="redefinirMsg()" id="Email">
+                    <input type="email" class="form-control cor" name="Email" onblur="validarEmail()"
+                           onfocus="redefinirMsg()" id="Email" placeholder="seuemail@email.com.br">
                     <small id="error-email" class="form-text text-right"></small>
                 </div>
 
                 <div class="form-group">
                     <label for="Fone">Telefone:</label>
-                    <input class="form-control cor" type="text" name="Fone" size="35">
+                    <input class="form-control cor" type="text" name="Fone" size="35" placeholder="xx xxxxxxxxx">
                 </div>
 
                 <div class="form-group">
                     <label for="Assunto">Assunto:</label>
-                    <input class="form-control cor" type="text" name="Assunto" id="Assunto" size="35">
+                    <input class="form-control cor" type="text" name="Assunto" id="Assunto" size="35" placeholder="Mailer PHP do Goole">
                 </div>
 
                 <div class="form-group">

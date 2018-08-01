@@ -9,10 +9,10 @@ if ($_POST) {
     $email = $_POST['email'];
     $senha = $_POST['senha'];
 
-    $query = ('SELECT * FROM pessoa WHERE email = :email');
-    $stmt  = $conn->prepare($query);
-    $stmt->bindValue(":email", $email, PDO::PARAM_STR);
-    $stmt->execute();
+//    $query = ('SELECT * FROM pessoa WHERE email = :email');
+//    $stmt  = $conn->prepare($query);
+//    $stmt->bindValue(":email", $email, PDO::PARAM_STR);
+//    $stmt->execute();
 
     if ($stmt->rowCount($query) > 0) {
         echo "Email já cadastrado!";
