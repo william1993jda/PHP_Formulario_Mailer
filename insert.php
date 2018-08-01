@@ -7,10 +7,9 @@ if ($_POST) {
 
     $nomeC = $_POST['nome'];
     $email = $_POST['email'];
-    $senha = md5($_POST['senha']);
+    $senha = $_POST['senha'];
 
     $query = ('SELECT * FROM pessoa WHERE email = :email');
-
     $stmt  = $conn->prepare($query);
     $stmt->bindValue(":email", $email, PDO::PARAM_STR);
     $stmt->execute();
@@ -21,7 +20,7 @@ if ($_POST) {
 
         $sql  = ("INSERT INTO pessoa (nome, senha, email) VALUES ('$nomeC', '$senha', '$email')");
         $stmt = $conn->prepare($sql);
-        $stmt->bindParam(":nome", $nomeC);
+        $stmt->bindParam(":nome",  $nomeC);
         $stmt->bindParam(":senha", $senha);
         $stmt->bindParam(":email", $email);
         $stmt->execute();

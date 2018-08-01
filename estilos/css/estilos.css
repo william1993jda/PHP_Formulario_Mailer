@@ -12,6 +12,16 @@ body {
     align-items: center;
 }
 
+#img:active{
+    border: solid 2px blue;
+    background-color: greenyellow;
+}
+
+#img:hover{
+    background-color: #fd7e14;
+    /*border: solid 1px blue;*/
+}
+
 .formularios{
     margin-top: 15%;
 }

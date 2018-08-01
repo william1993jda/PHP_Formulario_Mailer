@@ -10,15 +10,17 @@ $senha = trim($_POST['senha']);
 try {
     $query = ("SELECT pessoa.id AS id, pessoa.nome AS nome, pessoa.senha AS senha, pessoa.email AS email FROM pessoa");
     $stmt  = $conn->prepare($query);
+    $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+    $stmt->bindParam(':nome', $nome, PDO::PARAM_STR);
+    $stmt->bindParam(':email', $id, PDO::PARAM_STR);
+    $stmt->bindParam(':senha', $senha, PDO::PARAM_STR);
     $stmt->execute();
 
-    $result = $stmt->rowCount();
-
     foreach  ($stmt as $key => $pessoa){
-       $id    = $pessoa['id'];
-       $nome  = $pessoa['nome'];
-       $email = $pessoa['email'];
-       $senha = $pessoa['senha'];
+       $id    = $pessoa->id;
+       $nome  = $pessoa->nome;
+       $email = $pessoa->email;
+       $senha = $pessoa->senha;
    }
 
 }catch (Exception $e) {

@@ -4,14 +4,14 @@
 //    header('location: Formulario.php');
 //}
 
-ob_start();
-session_start();
 
 //if (isset($_SESSION['sessaoemail']) && (isset($_SESSION['sessaosenha']))){
 //    header('location: Formulario.php');
 //}else{
 //    echo "Sessão não foi iniciada";
 //}
+ob_start();
+session_start();
 
 require_once 'db.php';
 
@@ -19,6 +19,7 @@ if (isset($_POST['logar'])){
 
     $login = trim($_POST['email']);
     $senha = trim($_POST['senha']);
+
     $query = ('SELECT * FROM pessoa WHERE email = :email AND senha = :senha');
 
     try{
@@ -33,7 +34,7 @@ if (isset($_POST['logar'])){
             $login = ['email'];
             $senha = ['senha'];
 
-            session_start();
+//            session_start();
             $_SESSION['sessaoemail'] = $login;
             $_SESSION['sessaosenha'] = $senha;
 
