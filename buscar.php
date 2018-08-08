@@ -32,7 +32,10 @@ if (!isset($_SESSION['sessaoemail']) && !isset($_SESSION['sessaosenha'])){sessio
             url: page,
             beforeSend: function () {
                 $("#dados").html(
-                    "<span id='carregando'>Pesquisando<img style='width: 35px; padding-top: 4px;' src='img/Ellipsis-1.6s-200px.gif'></span>"
+                    "<span id='carregando'>" +
+                    "Pesquisando" +
+                    "<img style='width: 35px; padding-top: 4px;' src='img/Ellipsis-1.6s-200px.gif'>" +
+                    "</span>"
                     +"<img id='preloader' src=\"img/Magnify-1s-200px.svg\" />"
                  );
             },
@@ -46,6 +49,5 @@ if (!isset($_SESSION['sessaoemail']) && !isset($_SESSION['sessaosenha'])){sessio
     $("#buscar").click(function () {
         buscar($("#palavra").val())
     });
-
 </script>
 <?php require_once 'Footer.php';?>

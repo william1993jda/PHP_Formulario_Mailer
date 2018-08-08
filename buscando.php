@@ -25,7 +25,7 @@ $seleciona->execute();
 
         <tbody>
             <?php while ($linha = $seleciona->fetch(PDO::FETCH_ASSOC)): ?>
-                <tr id="palavra">
+                <tr id="tr">
                     <th scope="row"><?=$linha['id']?></th>
                     <td><?=$linha['nome']?></td>
                     <td><?=$linha['email']?></td>
@@ -43,13 +43,13 @@ $seleciona->execute();
                         url: "deletar.php",
                         data:"id="+id,
                         success: function (msg) {
-                            $("#palavra").html(msg);
+                            $("#dados").html(msg);
                         }
                     });
                 }
 
-                $("#palavra").click(function () {
-                    id($("#palavra").val());
+                $("#deletando").click(function () {
+                    id($("#deletando").val());
                 });
             </script>
         </tbody>
