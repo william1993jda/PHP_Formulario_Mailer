@@ -9,13 +9,13 @@ if ($_POST) {
     $email = $_POST['email'];
     $senha = $_POST['senha'];
 
-//    $query = ('SELECT * FROM pessoa WHERE email = :email');
-//    $stmt  = $conn->prepare($query);
-//    $stmt->bindValue(":email", $email, PDO::PARAM_STR);
-//    $stmt->execute();
+    $query = ('SELECT * FROM pessoa WHERE email = :email');
+    $stmt  = $conn->prepare($query);
+    $stmt->bindValue(":email", $email, PDO::PARAM_STR);
+    $stmt->execute();
 
     if ($stmt->rowCount($query) > 0) {
-        echo "Email já cadastrado!";
+        header('location: emailJacadastrado.php');
     } else {
 
         $sql  = ("INSERT INTO pessoa (nome, senha, email) VALUES ('$nomeC', '$senha', '$email')");
@@ -25,13 +25,6 @@ if ($_POST) {
         $stmt->bindParam(":email", $email);
         $stmt->execute();
 
-        echo "Cadastrado com sucesso!";
-        header('Refresh:2, index.php');
-
-//        if ($stmt) {
-//            echo "Parabens, seu cadastro foi efetuado com sucesso!";
-//        } else {
-//            echo "Deu ruim";
-//        }
+        header('location: cadastradoSucesso.php');
     }
 }

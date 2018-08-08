@@ -117,12 +117,11 @@ if ( $erro ) {
     if (!empty($error)) {
         echo $error;
     }
-    // Se a variável erro continuar com valor falso
-   // Você pode fazer o que preferir aqui, por exemplo,
-  // enviar para a base de dados, ou enviar um email
- // Tanto faz. Vou apenas exibir os dados na tela.
-// echo "<h1> Veja os dados enviados</h1>";
-
+       // Se a variável erro continuar com valor falso
+      // Você pode fazer o que preferir aqui, por exemplo,
+     // enviar para a base de dados, ou enviar um email
+    // Tanto faz. Vou apenas exibir os dados na tela.
+   // echo "<h1> Veja os dados enviados</h1>";
   //    foreach ( $_POST as $chave => $valor ) {
  //        echo '<b>' . $chave . '</b>: ' . $valor . '<br><br>';
 //    }

@@ -1,5 +1,18 @@
 <?php require_once 'layout.php';?>
-    <form style="margin-top: 15%;" action="insert.php" method="post" class="col-6 jumbotron">
+<!--<script>-->
+<!--    $(document).ready(function () {-->
+<!--        $("#form").submit(function () {-->
+<!--            let nome = $("#form").val();-->
+<!---->
+<!--            if (nome == ""){-->
+<!--                alert('Escreva algo')-->
+<!--            }-->
+<!--            return false;-->
+<!--        })-->
+<!--    })-->
+<!--</script>-->
+
+    <form style="margin-top: 15%;background-color: #343A40; color: #FFFFFF;" action="insert.php" id="form" method="post" class="col-6 jumbotron">
         <img class="float-right" style="width: 65px; margin-top: -55px;" src="img/icon-php1-1.png" alt="">
         <h4>Insira seus dados para se cadastrar</h4>
         <hr>
@@ -22,6 +35,5 @@
             <a class="btn btn-outline-primary" href="index.php">Voltar</a>
             <button type="submit" class="btn btn-outline-success">Cadastrar</button>
         </div>
-
     </form>
 <?php require_once 'Footer.php';?>

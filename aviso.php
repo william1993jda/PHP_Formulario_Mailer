@@ -9,7 +9,7 @@ require_once 'layout.php'; ?>
     <div class="card-body">
         <p class="card-text">Para acessar essa área, você precisa estar logado!</p>
         <hr>
-        <a href="index.php" class="btn btn-primary float-right">Voltar</a>
+        <a href="index.php" class="btn btn-outline-primary btn-block">Voltar</a>
     </div>
 </div>
 <?php require_once 'Footer.php'; ?>

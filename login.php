@@ -15,10 +15,9 @@ if (isset($_POST['logar'])){
     $login = trim($_POST['email']);
     $senha = trim($_POST['senha']);
 
-
     try{
         $query = ('SELECT * FROM pessoa WHERE email = :email AND senha = :senha');
-        $stmt = $conn->prepare($query);
+        $stmt  = $conn->prepare($query);
         $stmt->bindValue(":email", $login, PDO::PARAM_STR);
         $stmt->bindValue(":senha", $senha, PDO::PARAM_STR);
         $stmt->execute();
