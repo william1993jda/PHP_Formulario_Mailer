@@ -1,5 +1,7 @@
-<?php require_once 'login.php';?>
-<?php require_once 'consultas.php';?>
+<?php
+require_once 'login.php';
+require_once 'consultas.php';
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -19,7 +21,10 @@
 <div class="pos-f-t">
     <div class="collapse" id="navbarToggleExternalContent">
         <div class="bg-dark p-4">
-            <a class="navbar-brand" href="http://php.net/" target="_blank"><img style="width:70px; height: 50px" src="img/icon-php1-1.png" alt=""> Projeto PHP</a>
+            <a class="navbar-brand" href="http://php.net/" target="_blank">
+                <img style="width:70px;" src="img/icon-php1-1.png" alt="">
+                Projeto PHP
+            </a>
         </div>
     </div>
 
@@ -32,19 +37,22 @@
         <ul class="nav float-right">
             <li class="nav-item">
                 <div class="btn-group">
-                    <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
                         Opções
                     </button>
                     <div class="dropdown-menu">
                         <p class="dropdown-item">Olá...</p>
                         <div class="dropdown-divider"></div>
-
                         <a class="dropdown-item" href="logout.php">Sair</a>
                     </div>
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="buscar.php">Buscar</a>
+                <a class="nav-link active" href="buscar.php">
+                    Buscar
+                    <img style="width: 30px" src="img/Magnify-1s-200px.svg" alt="">
+                </a>
             </li>
         </ul>
         <?php endif; ?>

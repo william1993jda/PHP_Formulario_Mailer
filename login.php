@@ -31,7 +31,6 @@ if (isset($_POST['logar'])){
             //session_start();
             $_SESSION['sessaoemail'] = $login;
             $_SESSION['sessaosenha'] = $senha;
-
             //echo "Logado com sucesso";
 
             //header("Refresh:3, Formulario.php");

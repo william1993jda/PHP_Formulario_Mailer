@@ -28,8 +28,8 @@ $(document).ready(function() {
 });
 
 // function validarEmail(){
-//     var email = document.querySelector('#Email');
-//     var error = document.querySelector('#error-email');
+//     let email = document.querySelector('#Email');
+//     let error = document.querySelector('#error-email');
 //
 //     if(!email.checkValidity()){
 //         // error.innerHTML = "Email inválido.";
@@ -39,14 +39,14 @@ $(document).ready(function() {
 // }
 
 function redefinirMsg(){
-    var error = document.querySelector('#error-email');
+    let error = document.querySelector('#error-email');
     if (error.innerHTML = "Email inválido."){
         error.innerHTML = "";
     }
 }
 
 function envia() {
-    var nome = document.getElementById("Nome").value;
+    let nome = document.getElementById("Nome").value;
     if(nome == '') {
         alert("Preencha o campo Nome!");
         // setTimeout(location.href = "Formulario.php");
@@ -55,7 +55,7 @@ function envia() {
         document.getElementById("interna").submit();
     }
 
-    var email = document.getElementById("Email").value;
+    let email = document.getElementById("Email").value;
     if(email == '') {
         alert("Preencha o campo de Email!");
         // setTimeout(location.href = "Formulario.php");
@@ -64,7 +64,7 @@ function envia() {
         document.getElementById("interna").submit();
     }
 
-    var assunto = document.getElementById("Assunto").value;
+    let assunto = document.getElementById("Assunto").value;
     if(assunto == '') {
         alert("Preencha o campo Assunto!");
         // setTimeout(location.href = "Formulario.php");
@@ -73,7 +73,7 @@ function envia() {
         document.getElementById("interna").submit();
     }
 
-    var fone = document.getElementById("Fone").value;
+    let fone = document.getElementById("Fone").value;
     if(fone == '') {
         alert("Preencha o campo Telefone!");
         // setTimeout(location.href = "Formulario.php");
@@ -82,7 +82,7 @@ function envia() {
         document.getElementById("interna").submit();
     }
 
-    var msg = document.getElementById("mensagem").value;
+    let msg = document.getElementById("mensagem").value;
     if(msg == '') {
         alert("Preencha o campo de Mensagem!");
         // setTimeout(location.href = "Formulario.php");
