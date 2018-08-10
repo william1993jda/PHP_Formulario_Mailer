@@ -44,7 +44,7 @@ require_once 'consultas.php';
                     <div class="dropdown-menu">
                         <p class="dropdown-item">Olá...</p>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="logout.php">Sair</a>
+                        <a style="color: red" class="dropdown-item" href="logout.php">Sair</a>
                     </div>
                 </div>
             </li>

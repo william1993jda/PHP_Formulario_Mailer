@@ -36,11 +36,12 @@ if (isset($_POST['logar'])){
             //header("Refresh:3, Formulario.php");
             header("location: Formulario.php");
 
-        }else{
+        }
+        else{
             unset ($_SESSION['sessaoemail']);
             unset ($_SESSION['sessaosenha']);
             echo "Dados incorretos";
-            header("Refresh:2, index.php");
+            header("location: index.php");
         }
 
     }catch (Exception $e) {
