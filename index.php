@@ -1,7 +1,7 @@
 <?php require_once 'layout.php';if (isset($_SESSION['sessaoemail']) && isset($_SESSION['sessaosenha'])){header('location: Formulario.php');} ?>
 
 <div class="panel-body padding-top-md" >
-    <div id="login-alert" class="alert alert-danger">
+    <div style="display: none" id="login-alert" class="alert alert-danger">
         <span class="glyphicon glyphicon-exclamation-sign"></span>
         <span id="mensagem"></span>
     </div>
@@ -23,35 +23,36 @@
         <button type="submit" name="logar" id="btn-login" class="btn btn-outline-primary btn-block">Entrar</button>
     </form>
 
-    <script>
-        $('document').ready(function(){
-            $("#btn-login").click(function(){
-                let data = $("#login-form").serialize();
-
-                $.ajax({
-                    type: 'POST',
-                    url: 'login.php',
-                    data: data,
-                    dataType: 'json',
-                    beforeSend: function()
-                    {
-                        $("#btn-login").html("<img style='width: 30px;' src='img/Spinner-1s-200px.svg'>");
-                    },
-                    success: function(response){
-                        if(response.codigo == "1"){
-                            $("#btn-login").html('Entrar');
-                            $("#login-alert").css('display', 'none');
-                            window.location.href = "login.php";
-                        }
-                        else{
-                            $("#btn-login").html('Entrar');
-                            $("#login-alert").css('display', 'block');
-                            $("#mensagem").html('<strong>Erro! </strong>' + response.mensagem);
-                        }
-                    }
-                });
-            });
-
-        });
-    </script>
+<!--    <script>-->
+<!--        $('document').ready(function(){-->
+<!--            $("#btn-login").click(function(){-->
+<!--                let data = $("#login-form").serialize();-->
+<!---->
+<!--                $.ajax({-->
+<!--                    type: 'POST',-->
+<!--                    url: 'login.php',-->
+<!--                    data: data,-->
+<!--                    dataType: 'json',-->
+<!--                    beforeSend: function()-->
+<!--                    {-->
+<!--                        $("#btn-login").html("<img style='width: 30px;' src='img/Spinner-1s-200px.svg'>");-->
+<!--                    },-->
+<!--                    success: function(response){-->
+<!--                        if(response.codigo == "1"){-->
+<!--                            $("#btn-login").html('Entrar');-->
+<!--                            $("#login-alert").css('display', 'none');-->
+<!--                            window.location.href = "login.php";-->
+<!--                        }-->
+<!---->
+<!--                        else{-->
+<!--                            $("#btn-login").html('Entrar');-->
+<!--                            $("#login-alert").css('display', 'block');-->
+<!--                            $("#mensagem").html('<strong>Erro! </strong>' + response.mensagem);-->
+<!--                        }-->
+<!--                    }-->
+<!--                });-->
+<!--            });-->
+<!---->
+<!--        });-->
+<!--    </script>-->
 <?php require_once 'Footer.php'; ?>
