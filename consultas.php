@@ -2,6 +2,7 @@
 
 require_once 'db.php';
 require_once 'login.php';
+
 $id      = trim($_POST['id']);
 $nome    = trim($_POST['nome']);
 //$senha = trim($_POST['senha']);

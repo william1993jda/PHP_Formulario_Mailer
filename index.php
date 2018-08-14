@@ -23,25 +23,55 @@
     </form>
 </div>
 
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 style="color: red" class="modal-title" id="exampleModalCenterTitle">Erro</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+               <div class="alert alert-danger">Por favor, preencha os dados corretamente!</div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script>
     $(document).ready(function(){
         $('#login-alert').hide(); //Esconde o elemento com id errolog
         $('#login-form').submit(function(){ //Ao submeter formulário
+
             let email = $('#Email').val(); //Pega valor do campo email
             let senha = $('#Senha').val(); //Pega valor do campo senha
+
+            if (email == '' || senha == ''){
+
+                $('#exampleModalCenter').modal('toggle').css('background-color', 'rgb(255, 0, 0, 0.5)');
+                // $('#exampleModalCenter').css('background-color', 'red');
+                // alert('Por favor, preencha os dados corretamente!');
+                return false;
+            }
+
             $.ajax({ //Função AJAX
                 url: "login.php", //Arquivo php
                 type: "post", //Método de envio
                 data: "email=" + email + "&senha=" + senha,	//Dados
 
-                success: function (result){ //Sucesso no AJAX
-                    if(result == 1){
-                        location.href='Formulario.php';	//Redireciona
-                    }else{
+                success: function (result) { //Sucesso no AJAX
+                    if (result == 1) {
+                        location.href = 'Formulario.php';	//Redireciona
+                    } else {
                         $('#login-alert').show(); //Informa o erro
                     }
                 }
             });
+
         });
         return false; //Evita que a página seja atualizada
     })

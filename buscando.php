@@ -44,9 +44,10 @@ $seleciona->execute();
                         data:"id="+id,
                         beforeSend: function () {
                             $("#seila").html(
-                                "<span style='color: red;' id='carregando'>"+"Excluindo"+"</span>"+"<img style='width: 40px' src=\"img/Spinner-1s-200px.svg\" />"
+                                "<span style='color: red;' id='carregando'>"+"Excluindo..."+"</span>"+"<img style='width: 40px' src='img/Spinner-1s-200px.svg'>"
                             );
                         },
+
                         success: function (msg) {
                             $("#dados").html(msg);
                         }
