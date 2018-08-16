@@ -4,9 +4,9 @@ require_once 'login.php';
 
 if (!isset($_SESSION['sessaoemail']) && !isset($_SESSION['sessaosenha'])){session_destroy();header('location: aviso.php');}
 
-$palavra    = $_POST['palavra'];
-$query      = ("SELECT * FROM pessoa WHERE nome LIKE '%$palavra%'");
-$seleciona  = $conn->prepare($query);
+$palavra   = $_POST['palavra'];
+$query     = ("SELECT * FROM pessoa WHERE nome LIKE '%$palavra%'");
+$seleciona = $conn->prepare($query);
 $seleciona->execute();
 
 ?>

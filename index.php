@@ -1,4 +1,9 @@
-<?php require_once 'layout.php';if (isset($_SESSION['sessaoemail']) && isset($_SESSION['sessaosenha'])){header('location: Formulario.php');} ?>
+<?php
+require_once 'layout.php';
+if (isset($_SESSION['sessaoemail']) && isset($_SESSION['sessaosenha'])){
+    header('location: Formulario.php');
+}
+?>
 
 <div class="panel-body padding-top-md" >
     <div style="display: none" id="login-alert" class="alert alert-danger">
@@ -27,13 +32,13 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 style="color: red" class="modal-title" id="exampleModalCenterTitle">Erro</h5>
+                <img style="width: 60px" src="img/exclamation-mark.svg" alt="">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-               <div class="alert alert-danger">Por favor, preencha os dados corretamente!</div>
+               <div class="alert alert-danger"><span id="modalErro">Por favor, preencha os dados corretamente!</span></div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
@@ -52,7 +57,7 @@
 
             if (email == '' || senha == ''){
 
-                $('#exampleModalCenter').modal('toggle').css('background-color', 'rgb(255, 0, 0, 0.5)');
+                $('#exampleModalCenter').modal('toggle').css('background-color', 'rgb(255, 0, 0)');
                 // $('#exampleModalCenter').css('background-color', 'red');
                 // alert('Por favor, preencha os dados corretamente!');
                 return false;
@@ -64,14 +69,15 @@
                 data: "email=" + email + "&senha=" + senha,	//Dados
 
                 success: function (result) { //Sucesso no AJAX
-                    if (result == 1) {
+                    if (result === 1) {
                         location.href = 'Formulario.php';	//Redireciona
                     } else {
-                        $('#login-alert').show(); //Informa o erro
+                        $('#exampleModalCenter').modal('toggle').css('background-color', 'rgb(255, 0, 0)');
+                        $('#modalErro').text('Digita direito doente!');
+                        // $('#login-alert').show(); //Informa o erro
                     }
                 }
             });
-
         });
         return false; //Evita que a página seja atualizada
     })

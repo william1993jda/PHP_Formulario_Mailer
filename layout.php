@@ -1,6 +1,7 @@
 <?php
 require_once 'login.php';
-require_once 'consultas.php';
+//session_start();
+//require_once 'consultas.php';
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -34,30 +35,37 @@ require_once 'consultas.php';
             <span class="navbar-toggler-icon"></span>
         </button>
         <?php if (isset($_SESSION['sessaoemail']) && isset($_SESSION['sessaosenha'])): ?>
-        <ul class="nav float-right">
-            <li class="nav-item">
-                <div class="btn-group">
-                    <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                        Opções
-                    </button>
-                    <div class="dropdown-menu">
-                        <p class="dropdown-item">Olá...</p>
-                        <div class="dropdown-divider"></div>
-                        <a style="color: red" class="dropdown-item" href="logout.php">Sair</a>
+            <ul class="nav float-right">
+                <li class="nav-item">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                            Opções
+                        </button>
+                        <div class="dropdown-menu">
+                            <?php foreach ($stmt as $nome): ?>
+                                <p class="dropdown-item">Olá, <?=$nome['nome']?></p>
+                            <?php endforeach; ?>
+                            <div class="dropdown-divider"></div>
+                            <a style="color: red" class="dropdown-item" href="logout.php">Sair</a>
+                        </div>
                     </div>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" href="buscar.php">
-                    Buscar
-                    <img style="width: 30px" src="img/Magnify-1s-200px.svg" alt="">
-                </a>
-            </li>
-        </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="buscar.php">
+                        Buscar
+                        <img style="width: 30px" src="img/Magnify-1s-200px.svg" alt="">
+                    </a>
+                </li>
+            </ul>
         <?php endif; ?>
     </nav>
 </div>
+<!---->
+<?php //while($listar = $stmt->fetch(PDO::FETCH_OBJ)): ?>
+<!--<h1 style="color: #FFFFFF">Sei lá loko --><?//=$listar['nome']?><!--</h1>-->
+<?php //endwhile; ?>
+
 <!--<nav class="navbar navbar-light bg-light">-->
 <!--    <a class="navbar-brand" href="http://php.net/" target="_blank"><img style="width:50px" src="img/icon-php1-1.png" alt=""> Projeto PHP</a>-->
 <!--    --><?php //if (isset($_SESSION['sessaoemail']) && isset($_SESSION['sessaosenha'])): ?>

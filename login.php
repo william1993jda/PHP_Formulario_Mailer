@@ -16,7 +16,7 @@ if (isset($_POST['logar'])){
     $senha = trim($_POST['senha']);
 
     try{
-        $query = ('SELECT * FROM pessoa WHERE email = :email AND senha = :senha');
+        $query = ('SELECT nome FROM pessoa WHERE email = :email AND senha = :senha');
         $stmt  = $conn->prepare($query);
         $stmt->bindValue(":email", $login, PDO::PARAM_STR);
         $stmt->bindValue(":senha", $senha, PDO::PARAM_STR);
@@ -32,7 +32,11 @@ if (isset($_POST['logar'])){
             $_SESSION['sessaoemail'] = $login;
             $_SESSION['sessaosenha'] = $senha;
             //echo "Logado com sucesso";
+            foreach ($stmt as $item) {
+                echo $item['nome'];
+            }
 
+            die(header("refresh:2, Formulario.php"));
             //header("Refresh:3, Formulario.php");
             header("location: Formulario.php");
 
@@ -40,8 +44,10 @@ if (isset($_POST['logar'])){
         else{
             unset ($_SESSION['sessaoemail']);
             unset ($_SESSION['sessaosenha']);
-            echo "Dados incorretos";
-            header("location: index.php");
+
+            return false;
+//            echo "Dados incorretos";
+//            header("location: index.php");
         }
 
     }catch (Exception $e) {
