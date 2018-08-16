@@ -11,7 +11,7 @@ if (!isset($_SESSION['sessaoemail']) && !isset($_SESSION['sessaosenha'])){sessio
             <h6 class="text-right">Preencha os dados do formulário!</h6>
             <hr>
             <form id="interna" name="interna" action="email.php" method="post">
-
+                <h4>Olá, <?= $_SESSION['user']['nome'] ?></h4>
                 <div class="form-group">
                     <label for="Nome">Nome:</label>
                     <input class="form-control cor" type="text" name="Nome" id="Nome" size="35" placeholder="Seu nome">

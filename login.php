@@ -22,24 +22,20 @@ if (isset($_POST['logar'])){
         $stmt->bindValue(":senha", $senha, PDO::PARAM_STR);
         $stmt->execute();
 
-        $result = $stmt->rowCount();
 
-        if ($result > 0){
+        $result = $stmt->fetch();
+
+        if (count($result) > 0){
             $login = ['email'];
             $senha = ['senha'];
 
             //session_start();
             $_SESSION['sessaoemail'] = $login;
             $_SESSION['sessaosenha'] = $senha;
-            //echo "Logado com sucesso";
-            foreach ($stmt as $item) {
-                echo $item['nome'];
-            }
+            $_SESSION['user'] = $result;
 
-            die(header("refresh:2, Formulario.php"));
             //header("Refresh:3, Formulario.php");
             header("location: Formulario.php");
-
         }
         else{
             unset ($_SESSION['sessaoemail']);

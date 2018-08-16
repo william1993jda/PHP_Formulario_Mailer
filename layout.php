@@ -43,9 +43,7 @@ require_once 'login.php';
                             Opções
                         </button>
                         <div class="dropdown-menu">
-                            <?php foreach ($stmt as $nome): ?>
-                                <p class="dropdown-item">Olá, <?=$nome['nome']?></p>
-                            <?php endforeach; ?>
+                            <p class="dropdown-item">Olá, <?= $_SESSION['user']['nome'] ?></p>
                             <div class="dropdown-divider"></div>
                             <a style="color: red" class="dropdown-item" href="logout.php">Sair</a>
                         </div>
