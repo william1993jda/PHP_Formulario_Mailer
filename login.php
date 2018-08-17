@@ -16,7 +16,7 @@ if (isset($_POST['logar'])){
     $senha = trim($_POST['senha']);
 
     try{
-        $query = ('SELECT nome FROM pessoa WHERE email = :email AND senha = :senha');
+        $query = ('SELECT id,nome,perfil FROM pessoa WHERE email = :email AND senha = :senha');
         $stmt  = $conn->prepare($query);
         $stmt->bindValue(":email", $login, PDO::PARAM_STR);
         $stmt->bindValue(":senha", $senha, PDO::PARAM_STR);
@@ -25,14 +25,18 @@ if (isset($_POST['logar'])){
 
         $result = $stmt->fetch();
 
-        if (count($result) > 0){
+        $_SESSION['user'] = $result;
+
+        $selecionaPessoa = $stmt->rowCount();
+
+        if ($selecionaPessoa > 0){
             $login = ['email'];
             $senha = ['senha'];
 
             //session_start();
             $_SESSION['sessaoemail'] = $login;
             $_SESSION['sessaosenha'] = $senha;
-            $_SESSION['user'] = $result;
+//            $_SESSION['user'] = $result;
 
             //header("Refresh:3, Formulario.php");
             header("location: Formulario.php");
@@ -41,9 +45,9 @@ if (isset($_POST['logar'])){
             unset ($_SESSION['sessaoemail']);
             unset ($_SESSION['sessaosenha']);
 
-            return false;
+//            return false;
 //            echo "Dados incorretos";
-//            header("location: index.php");
+            header("location: index.php");
         }
 
     }catch (Exception $e) {

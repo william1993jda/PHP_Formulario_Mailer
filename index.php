@@ -79,6 +79,7 @@ if (isset($_SESSION['sessaoemail']) && isset($_SESSION['sessaosenha'])){
                 }
             });
         });
+
         return false; //Evita que a página seja atualizada
     })
 </script>

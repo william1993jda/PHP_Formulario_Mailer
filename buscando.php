@@ -13,51 +13,63 @@ $seleciona->execute();
 
 <?php if ($seleciona->rowCount() > 0 ){ ?>
     <div id="seila" class="alert" style="display: none"></div>
-    <table style="margin-top: 5%" class="table table-striped table-dark col-sm-12" id="myTable">
+    <table style="margin-top: 2%" class="table table-striped table-dark col-sm-12" id="myTable">
         <thead class="thead-dark">
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Nome</th>
-                <th scope="col">E-mail</th>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome</th>
+            <th scope="col">E-mail</th>
+            <?php if($_SESSION['user']['perfil'] == "Admin"): ?>
                 <th scope="col">Editar</th>
-            </tr>
+            <?php endif;?>
+        </tr>
         </thead>
 
         <tbody>
-            <?php while ($linha = $seleciona->fetch(PDO::FETCH_ASSOC)): ?>
-                <tr id="tr">
-                    <th scope="row"><?=$linha['id']?></th>
-                    <td><?=$linha['nome']?></td>
-                    <td><?=$linha['email']?></td>
-                    <td><a class="btn btn-outline-primary" href="editar.php?id=<?=$linha['id'];?>">Editar</a></td>
-<!--                    <td><a href="deletar.php?id=--><?//=$linha['id'];?><!--" class="btn btn-outline-danger">Excluir</a></td>-->
-                    <td><button class="btn btn-outline-danger" id="deletando" onclick="deleteData(<?=$linha['id'];?>)">Excluir</button></td>
-                </tr>
-            <?php endwhile;?>
-            <script>
-                function deleteData(str) {
+        <?php while ($linha = $seleciona->fetch(PDO::FETCH_ASSOC)): ?>
+            <tr id="tr">
+                <th scope="row"><?=$linha['id']?></th>
+                <td><?=$linha['nome']?></td>
+                <td><?=$linha['email']?></td>
+                <?php if($_SESSION['user']['perfil'] == "Admin"): ?>
+                    <td>
+                        <a class="btn btn-outline-primary" href="editar.php?id=<?=$linha['id'];?>">Editar
+                            <img src="img/pencil-2x.png" alt="">
+                        </a>
+                    </td>
+                    <!-- <td><a href="deletar.php?id=--><?//=$linha['id'];?><!--" class="btn btn-outline-danger">Excluir</a></td>-->
+                    <td>
+                        <button class="btn btn-outline-danger" id="deletando" onclick="deleteData(<?=$linha['id'];?>)">Excluir
+                            <img src="img/recycle-bin2.png" alt="">
+                        </button>
+                    </td>
+                <?php endif;?>
+            </tr>
+        <?php endwhile;?>
+        <script>
+            function deleteData(str) {
 
-                    let id = str;
-                    $.ajax({
-                        type: "GET",
-                        url: "deletar.php",
-                        data:"id="+id,
-                        beforeSend: function () {
-                            $("#seila").html(
-                                "<span style='color: red;' id='carregando'>"+"Excluindo..."+"</span>"+"<img style='width: 40px' src='img/Spinner-1s-200px.svg'>"
-                            );
-                        },
+                let id = str;
+                $.ajax({
+                    type: "GET",
+                    url: "deletar.php",
+                    data:"id="+id,
+                    beforeSend: function () {
+                        $("#seila").html(
+                            "<span style='color: red;' id='carregando'>"+"Excluindo..."+"</span>"+"<img style='width: 40px' src='img/Spinner-1s-200px.svg'>"
+                        );
+                    },
 
-                        success: function (msg) {
-                            $("#dados").html(msg);
-                        }
-                    });
-                }
-                $("#deletando").click(function () {
-                    $(".alert").css('display', 'block');
-                    id($("#deletando").val());
+                    success: function (msg) {
+                        $("#dados").html(msg);
+                    }
                 });
-            </script>
+            }
+            $("#deletando").click(function () {
+                $(".alert").css('display', 'block');
+                id($("#deletando").val());
+            });
+        </script>
         </tbody>
     </table>
 <?php } else{ ?>

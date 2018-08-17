@@ -5,7 +5,7 @@
     /*background-color: black; !important;*/
 /*}*/
 
-nav{
+nav {
     background-color: #563D7C;
 }
 
@@ -18,73 +18,88 @@ nav{
     align-items: center;
 }
 
-#carregando{
+#carregando {
     color: #FFFFFF;
 }
 
-#preloader{
+#preloader {
     height: 70px;
 }
 
-#carregando{
+#carregando {
     font-family: 'Monoton', Roboto;
 }
 
-#img:active{
+#img:active {
     border: solid 2px blue;
     background-color: greenyellow;
 }
 
-#img:hover{
+#img:hover {
     background-color: #fd7e14;
     /*border: solid 1px blue;*/
 }
 
-.formularios{
+.formularios {
     margin-top: 15%;
 }
 
-label{
+label {
     font-family: 'Monoton', Roboto;
 }
 
-footer{
+footer {
     background-color: #343A40;
 }
 
-small{
+.seila {
+    display: inline-flex;
+    padding-left: 5px;
+}
+
+/*.seila:hover{*/
+    /*background-color: red;*/
+    /*border-radius: 50px;*/
+/*}*/
+
+.div-seila {
+    margin-top: -2rem;
+    margin-right: 4rem;
+}
+
+small {
     color: red;
 }
 
-textarea{
+textarea {
     width: 400px;
 }
 
-#mensagem{
+#mensagem {
     border-radius: .25rem !important;
 }
 
-#Nome-error{
+#Nome-error {
     color: red;
     font-size: 0.70rem;
 }
 
-#Email-error{
+#Email-error {
     color: red;
     font-size: 0.70rem;
 }
 
-#Fone-error{
+#Fone-error {
     color: red;
     font-size: 0.70rem;
 }
 
-#Assunto-error{
+#Assunto-error {
     color: red;
     font-size: 0.70rem;
 }
 
-#mensagem-error{
+#mensagem-error {
     color: red;
     font-size: 0.70rem;
 }

@@ -13,7 +13,7 @@ if (!isset($_SESSION['sessaoemail']) && !isset($_SESSION['sessaosenha'])){sessio
         <input class="form-control mr-sm-2" type="search" id="palavra" placeholder="Perquisar" name="palavra" aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0" id="buscar" type="submit">Buscar</button>
         <div class="btn btn-group">
-        <a href="index.php" class="btn btn-outline-primary">Voltar</a>
+            <a href="index.php" class="btn btn-outline-primary">Voltar</a>
         </div>
     </div>
 
