@@ -21,7 +21,10 @@ if (isset($_SESSION['sessaoemail']) && isset($_SESSION['sessaosenha'])){
         <div class="form-group">
             <label for="Senha">Senha</label>
             <input type="password" name="senha" class="form-control" id="Senha" placeholder="******">
-            <a style="text-transform: uppercase" class="float-right" href="cadastro.php"><small id="emailHelp" class="form-text text-muted">Cadastre-se</small></a>
+            <a style="text-transform: uppercase" class="float-right" href="cadastro.php">
+                <small id="emailHelp" class="form-text text-muted">Cadastre-se
+                </small>
+            </a>
         </div>
         <br>
         <button type="submit" name="logar" id="btn-login" class="btn btn-outline-primary btn-block">Entrar</button>

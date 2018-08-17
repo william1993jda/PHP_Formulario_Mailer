@@ -3,7 +3,6 @@
 require_once 'login.php';
 require_once 'layout.php';
 
-session_start();
 
 if (!isset($_SESSION['sessaoemail']) && !isset($_SESSION['sessaosenha'])){session_destroy();header('location: aviso.php');}
 ?>
@@ -13,7 +12,7 @@ if (!isset($_SESSION['sessaoemail']) && !isset($_SESSION['sessaosenha'])){sessio
         <input class="form-control mr-sm-2" type="search" id="palavra" placeholder="Perquisar" name="palavra" aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0" id="buscar" type="submit">Buscar</button>
         <div class="btn btn-group">
-            <a href="index.php" class="btn btn-outline-primary">Voltar</a>
+            <a href="javascript:void(0)" onClick="history.go(-1); return false;" class="btn btn-outline-primary">Voltar</a>
         </div>
     </div>
 

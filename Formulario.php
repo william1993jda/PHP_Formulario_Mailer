@@ -31,12 +31,14 @@ if (!isset($_SESSION['sessaoemail']) && !isset($_SESSION['sessaosenha'])){sessio
 
                 <div class="form-group">
                     <label for="Assunto">Assunto:</label>
-                    <input class="form-control cor" type="text" name="Assunto" id="Assunto" size="35" placeholder="Mailer PHP do Google">
+                    <input class="form-control cor" type="text" name="Assunto" id="Assunto" size="35"
+                           placeholder="Mailer PHP do Google">
                 </div>
 
                 <div class="form-group">
                     <label for="Mensagem">Mensagem:</label>
-                    <textarea class="form-control rounded-0 cor" name="Mensagem" id="mensagem" cols="40" rows="8" placeholder="Digite seu texto aqui troxão!"></textarea>
+                    <textarea class="form-control rounded-0 cor" name="Mensagem" id="mensagem" cols="40" rows="8"
+                              placeholder="Digite seu texto aqui troxão!"></textarea>
                 </div>
 
                 <button type="submit" class="btn btn-outline-primary float-right" onclick="return envia()">Enviar</button>

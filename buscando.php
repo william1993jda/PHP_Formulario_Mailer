@@ -13,7 +13,7 @@ $seleciona->execute();
 
 <?php if ($seleciona->rowCount() > 0 ){ ?>
     <div id="seila" class="alert" style="display: none"></div>
-    <table style="margin-top: 2%" class="table table-striped table-dark col-sm-12" id="myTable">
+    <table style="margin-top: 2%; border-radius: 4px" class="table table-striped table-dark col-sm-12" id="myTable">
         <thead class="thead-dark">
         <tr>
             <th scope="col">#</th>
@@ -56,7 +56,10 @@ $seleciona->execute();
                     data:"id="+id,
                     beforeSend: function () {
                         $("#seila").html(
-                            "<span style='color: red;' id='carregando'>"+"Excluindo..."+"</span>"+"<img style='width: 40px' src='img/Spinner-1s-200px.svg'>"
+                            "<span style='color: red;' id='carregando'>"+
+                            "Excluindo..."+
+                            "</span>"+
+                            "<img style='width: 40px' src='img/Spinner-1s-200px.svg'>"
                         );
                     },
 

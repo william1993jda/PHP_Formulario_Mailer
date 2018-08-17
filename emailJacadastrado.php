@@ -7,7 +7,7 @@
     <div class="card-body">
         <div style="padding: 10px;border-radius: 4px;" class="aler alert-danger">Esse email já foi cadastrado!<br> Por favor, cadastre-se com outro e-mail.</div>
         <hr>
-        <a href="cadastro.php" class="btn btn-outline-primary btn-block">Voltar</a>
+        <a href="javascript:void(0)" onClick="history.go(-1); return false;" class="btn btn-outline-primary btn-block">Voltar</a>
     </div>
 </div>
 <?php require_once 'Footer.php'; ?>

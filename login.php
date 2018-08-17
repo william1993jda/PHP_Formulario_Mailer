@@ -38,7 +38,6 @@ if (isset($_POST['logar'])){
             $_SESSION['sessaosenha'] = $senha;
 //            $_SESSION['user'] = $result;
 
-            //header("Refresh:3, Formulario.php");
             header("location: Formulario.php");
         }
         else{

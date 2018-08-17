@@ -1,5 +1,6 @@
 <?php
 require_once 'login.php';
+
 //session_start();
 //require_once 'consultas.php';
 ?>
@@ -44,15 +45,19 @@ require_once 'login.php';
                             Opções
                         </button>
                         <div class="dropdown-menu">
-                            <p class="dropdown-item">Olá, <?=$_SESSION['user']['nome']?></p>
+                            <p class="dropdown-item">Olá, <?=$_SESSION['user']['nome'];?></p>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="editar.php?id=<?=$_SESSION['user']['id'];?>">Editar perfil<img
-                                            style="padding-left: 15px" src="img/pencil-2x.png" alt=""></a>
+                            <a class="dropdown-item" href="editar.php?id=<?=$_SESSION['user']['id'];?>">Editar perfil
+                                <img style="padding-left: 15px" src="img/pencil-2x.png" alt="">
+                            </a>
                             <div class="dropdown-divider"></div>
-                            <a style="color: red" class="dropdown-item" href="logout.php">Sair <img style="width: 20px; margin-left: 8px;" src="img/power-button.png" alt=""></a>
+                            <a style="color: red" class="dropdown-item" href="logout.php">Sair
+                                <img style="width: 20px; margin-left: 8px;" src="img/logout.png" alt="">
+                            </a>
                         </div>
                     </div>
                 </li>
+
                 <li class="nav-item">
                     <a class="nav-link active" href="buscar.php">
                         Buscar

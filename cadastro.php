@@ -32,7 +32,7 @@
         </div>
 
         <div class="control-group float-right">
-            <a class="btn btn-outline-primary" href="index.php">Voltar</a>
+            <a class="btn btn-outline-primary" href="javascript:void(0)" onClick="history.go(-1); return false;">Voltar</a>
             <button type="submit" class="btn btn-outline-success">Cadastrar</button>
         </div>
     </form>
