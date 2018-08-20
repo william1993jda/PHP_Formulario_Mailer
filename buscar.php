@@ -20,7 +20,6 @@ if (!isset($_SESSION['sessaoemail']) && !isset($_SESSION['sessaosenha'])){sessio
 </div>
 
 <script>
-
     $(document).ready(function(){
         $("#palavra").on("keyup", function() {
             var value = $(this).val().toLowerCase();
