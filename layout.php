@@ -10,10 +10,11 @@ require_once 'login.php';
     <meta charset="UTF-8">
     <title>Validando Formulário</title>
     <link rel="stylesheet" href="estilos/css/estilos.css">
+    <link rel="stylesheet" href="estilos/css/animate.css">
     <link rel="stylesheet" href="estilos/css/bootstrap.min.css">
     <link rel="shortcut icon" href="img/favicon.ico" />
     <script type="text/javascript" src="validate/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="js/meu.js"></script>
+    <script type="text/javascript" src="js/meu.js" defer></script>
     <script type="text/javascript" src="validate/jquery.validate.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="validate/additional-methods.min.js"></script>
@@ -45,17 +46,17 @@ require_once 'login.php';
                             Opções
                         </button>
                         <div class="dropdown-menu">
-                            <p class="dropdown-item">Olá, <?=$_SESSION['user']['nome'];?></p>
+                            <p class="dropdown-item text-uppercase">Olá, <?=$_SESSION['user']['nome'];?></p>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="cadastro.php">Novo usuário
+                            <a class="dropdown-item text-uppercase" href="cadastro.php">Novo usuário
                                 <img style="width: 20px; margin-left: 8px;" src="img/plus-2x.png" alt="">
                             </a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="editar.php?id=<?=$_SESSION['user']['id'];?>">Editar perfil
+                            <a class="dropdown-item text-uppercase" href="editar.php?id=<?=$_SESSION['user']['id'];?>">Editar perfil
                                 <img style="padding-left: 15px" src="img/pencil-2x.png" alt="">
                             </a>
                             <div class="dropdown-divider"></div>
-                            <a style="color: red" class="dropdown-item" href="logout.php">Sair
+                            <a style="color: red" class="dropdown-item text-uppercase" href="logout.php">Sair
                                 <img style="width: 20px; margin-left: 8px;" src="img/logout.png" alt="">
                             </a>
                         </div>

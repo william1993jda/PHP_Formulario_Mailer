@@ -10,7 +10,7 @@ if (isset($_SESSION['sessaoemail']) && isset($_SESSION['sessaosenha'])){
         Dados incorretos
     </div>
 
-    <form style="background-color: #343A40; color: #FFFFFF;" action="login.php" method="post" id="login-form" class="col-12 jumbotron formularios text-uppercase">
+    <form style="background-color: #343A40; color: #FFFFFF;" action="login.php" method="post" id="login-form" class="col-12 jumbotron formularios text-uppercase bounceIn">
         <h4>Bem vindo ao PHP Mailer</h4>
         <hr class="divider">
         <img class="float-right" style="width: 65px; margin-top: -120px;" src="img/icon-php1-1.png" alt="">

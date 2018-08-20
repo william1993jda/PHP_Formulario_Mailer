@@ -19,7 +19,7 @@ nav {
 }
 
 #carregando {
-    color: #FFFFFF;
+    color: #000000;
 }
 
 #preloader {
@@ -67,6 +67,15 @@ footer {
     margin-right: 4rem;
 }
 
+#img-facebook:hover{
+    background-color: red;
+    width: 30px;
+    height: 30px;
+    border-radius: 25px;
+    margin-left: -2px;
+    margin-top: 2px;
+}
+
 small {
     color: red;
 }
@@ -81,25 +90,43 @@ textarea {
 
 #Nome-error {
     color: red;
-    font-size: 0.70rem;
+    font-size: 1rem;
 }
 
 #Email-error {
     color: red;
-    font-size: 0.70rem;
+    font-size: 1rem;
 }
 
 #Fone-error {
     color: red;
-    font-size: 0.70rem;
+    font-size: 1rem;
 }
 
 #Assunto-error {
     color: red;
-    font-size: 0.70rem;
+    font-size: 1rem;
 }
 
 #mensagem-error {
     color: red;
-    font-size: 0.70rem;
+    font-size: 1rem;
+}
+
+#nome-error{
+    color: red;
+    font-size: 1rem;
+    float: right;
+}
+
+#email-error{
+    color: red;
+    font-size: 1rem;
+    float: right;
+}
+
+#senha-error{
+    color: red;
+    font-size: 1rem;
+    float: right;
 }

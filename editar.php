@@ -58,7 +58,7 @@ if ($stmt->execute()) {
 
 ?>
 
-<form style="margin-top: 15%;background-color: #343A40; color: #FFFFFF;" action="update.php" method="post" class="col-6 jumbotron">
+<form style="margin-top: 15%;background-color: #343A40; color: #FFFFFF;" action="update.php" id="form-editar" method="post" class="col-6 jumbotron animated bounceIn">
     <img class="float-right" style="width: 65px; margin-top: -55px;" src="img/icon-php1-1.png" alt="">
     <h4>Insira os dados para atualizar</h4>
     <hr>
@@ -79,7 +79,7 @@ if ($stmt->execute()) {
         <label for="senha">Senha:</label>
         <input type="text" name="senha" class="form-control" value="<?=$stmt['senha']?>" id="senha" placeholder="******">
     </div>
-
+    <br>
     <div class="control-group float-right">
         <a class="btn btn-outline-primary" href="Formulario.php">Voltar</a>
         <input type="submit" value="Salvar" class="btn btn-outline-success">

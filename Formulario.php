@@ -7,7 +7,7 @@ if (!isset($_SESSION['sessaoemail']) && !isset($_SESSION['sessaosenha'])){sessio
         <div class="col-sm">
 
         </div>
-        <div style="padding-top: 30px; padding-bottom: 1rem; margin-top: 3%;background-color: #343A40; color: #FFFFFF;" class="col-sm-12 jumbotron">
+        <div style="padding-top: 30px; padding-bottom: 1rem; margin-top: 3%;background-color: #343A40; color: #FFFFFF;" class="col-sm-12 jumbotron animated animated bounceIn">
             <h6 class="text-right">Preencha os dados do formulário!</h6>
             <hr>
             <form id="interna" name="interna" action="email.php" method="post">

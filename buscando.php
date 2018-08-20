@@ -1,26 +1,19 @@
 <?php
-require_once 'db.php';
-require_once 'login.php';
-
-if (!isset($_SESSION['sessaoemail']) && !isset($_SESSION['sessaosenha'])){session_destroy();header('location: aviso.php');}
-
 $palavra   = $_POST['palavra'];
-$query     = ("SELECT * FROM pessoa WHERE nome LIKE '%$palavra%'");
-$seleciona = $conn->prepare($query);
-$seleciona->execute();
-
+require_once 'consultas.php';
+if (!isset($_SESSION['sessaoemail']) && !isset($_SESSION['sessaosenha'])){session_destroy();header('location: aviso.php');}
 ?>
 
 <?php if ($seleciona->rowCount() > 0 ){ ?>
     <div id="seila" class="alert" style="display: none"></div>
-    <table style="margin-top: 2%; border-radius: 4px" class="table table-striped table-dark col-sm-12" id="myTable">
+    <table style="margin-top: 2%; border-radius: 4px" class="table table-striped table-dark col-sm-12 bounceIn" id="myTable">
         <thead class="thead-dark">
         <tr>
-            <th scope="col">#</th>
-            <th scope="col">Nome</th>
-            <th scope="col">E-mail</th>
+            <th class="text-uppercase" scope="col">#</th>
+            <th class="text-uppercase" scope="col">Nome</th>
+            <th class="text-uppercase" scope="col">E-mail</th>
             <?php if($_SESSION['user']['perfil'] == "Admin"): ?>
-                <th scope="col">Editar</th>
+                <th class="text-uppercase" scope="col">Editar</th>
             <?php endif;?>
         </tr>
         </thead>
@@ -29,7 +22,7 @@ $seleciona->execute();
         <?php while ($linha = $seleciona->fetch(PDO::FETCH_ASSOC)): ?>
             <tr id="tr">
                 <th scope="row"><?=$linha['id']?></th>
-                <td><?=$linha['nome']?></td>
+                <td class="text-uppercase"><?=$linha['nome']?></td>
                 <td><?=$linha['email']?></td>
                 <?php if($_SESSION['user']['perfil'] == "Admin"): ?>
                     <td>
@@ -46,33 +39,6 @@ $seleciona->execute();
                 <?php endif;?>
             </tr>
         <?php endwhile;?>
-        <script>
-            function deleteData(str) {
-
-                let id = str;
-                $.ajax({
-                    type: "GET",
-                    url: "deletar.php",
-                    data:"id="+id,
-                    beforeSend: function () {
-                        $("#seila").html(
-                            "<span style='color: red;' id='carregando'>"+
-                            "Excluindo..."+
-                            "</span>"+
-                            "<img style='width: 40px' src='img/Spinner-1s-200px.svg'>"
-                        );
-                    },
-
-                    success: function (msg) {
-                        $("#dados").html(msg);
-                    }
-                });
-            }
-            $("#deletando").click(function () {
-                $(".alert").css('display', 'block');
-                id($("#deletando").val());
-            });
-        </script>
         </tbody>
     </table>
 <?php } else{ ?>
