@@ -3,14 +3,15 @@ require_once 'layout.php';
 if (isset($_SESSION['sessaoemail']) && isset($_SESSION['sessaosenha'])){
     header('location: Formulario.php');
 }
+
 ?>
 
-<div class="panel-body padding-top-md" >
+<div class="panel-body padding-top-md">
     <div style="display: none" id="login-alert" class="alert alert-danger">
         Dados incorretos
     </div>
 
-    <form style="background-color: #343A40; color: #FFFFFF;" action="login.php" method="post" id="login-form" class="col-12 jumbotron formularios text-uppercase bounceIn">
+    <form style="background-color: #343A40; color: #FFFFFF;" action="login.php" method="post" id="login-form" class="col-12 jumbotron formularios text-uppercase">
         <h4>Bem vindo ao PHP Mailer</h4>
         <hr class="divider">
         <img class="float-right" style="width: 65px; margin-top: -120px;" src="img/icon-php1-1.png" alt="">
@@ -31,7 +32,7 @@ if (isset($_SESSION['sessaoemail']) && isset($_SESSION['sessaosenha'])){
     </form>
 </div>
 
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade animated bounceIn" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -49,43 +50,6 @@ if (isset($_SESSION['sessaoemail']) && isset($_SESSION['sessaosenha'])){
         </div>
     </div>
 </div>
-
-<script>
-    $(document).ready(function(){
-        $('#login-alert').hide(); //Esconde o elemento com id errolog
-        $('#login-form').submit(function(){ //Ao submeter formulário
-
-            let email = $('#Email').val(); //Pega valor do campo email
-            let senha = $('#Senha').val(); //Pega valor do campo senha
-
-            if (email == '' || senha == ''){
-
-                $('#exampleModalCenter').modal('toggle').css('background-color', 'rgb(255, 0, 0)');
-                // $('#exampleModalCenter').css('background-color', 'red');
-                // alert('Por favor, preencha os dados corretamente!');
-                return false;
-            }
-
-            $.ajax({ //Função AJAX
-                url: "login.php", //Arquivo php
-                type: "post", //Método de envio
-                data: "email=" + email + "&senha=" + senha,	//Dados
-
-                success: function (result) { //Sucesso no AJAX
-                    if (result === 1) {
-                        location.href = 'Formulario.php';	//Redireciona
-                    } else {
-                        $('#exampleModalCenter').modal('toggle').css('background-color', 'rgb(255, 0, 0)');
-                        $('#modalErro').text('Digita direito doente!');
-                        // $('#login-alert').show(); //Informa o erro
-                    }
-                }
-            });
-        });
-
-        return false; //Evita que a página seja atualizada
-    })
-</script>
 
 <!--    <script>-->
 <!---->

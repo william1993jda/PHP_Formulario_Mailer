@@ -44,9 +44,9 @@ if (isset($_POST['logar'])){
             unset ($_SESSION['sessaoemail']);
             unset ($_SESSION['sessaosenha']);
 
-//            return false;
 //            echo "Dados incorretos";
             header("location: index.php");
+            return false;
         }
 
     }catch (Exception $e) {

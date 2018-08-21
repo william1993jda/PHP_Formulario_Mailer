@@ -2,6 +2,7 @@
 
 require_once 'layout.php';
 require_once 'consultas.php';
+require_once 'dataHora.php';
 
 if (!isset($_SESSION['sessaoemail']) && !isset($_SESSION['sessaosenha'])){
     session_destroy();
@@ -63,6 +64,9 @@ if ($stmt->execute()) {
     <h4>Insira os dados para atualizar</h4>
     <hr>
 
+    <input type="hidden" name="datas" id="datas" value="<?=date('Y-m-d',$unpack0[7]);?>">
+    <input type="hidden" name="hora" id="hora" value="<?=date('H:i:s',$unpack0[7]);?>">
+
     <input type="hidden" name="id" id="id" value="<?=$stmt['id'];?>">
 
     <div class="form-group">
@@ -81,7 +85,7 @@ if ($stmt->execute()) {
     </div>
     <br>
     <div class="control-group float-right">
-        <a class="btn btn-outline-primary" href="Formulario.php">Voltar</a>
+        <a class="btn btn-outline-primary" href="Formulario.php">Voltar</a>&nbsp;
         <input type="submit" value="Salvar" class="btn btn-outline-success">
     </div>
 </form>

@@ -1,5 +1,6 @@
 <?php
 require_once 'login.php';
+require_once 'dataHora.php';
 
 //session_start();
 //require_once 'consultas.php';
@@ -63,13 +64,21 @@ require_once 'login.php';
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="buscar.php">
+                    <a id="hoverBuscar" class="nav-link active" href="buscar.php">
                         Buscar
                         <img style="width: 30px" src="img/Magnify-1s-200px.svg" alt="">
                     </a>
+                </li>
+                <li>
+                    <div id="demo"></div>
+                </li>
+                &nbsp;
+                <li>
+                    <div id="demo"><?=date('d-m-y',$unpack0[7]);?></div>
                 </li>
             </ul>
         <?php endif; ?>
     </nav>
 </div>
+
 <div class="container">

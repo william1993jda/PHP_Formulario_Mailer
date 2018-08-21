@@ -24,7 +24,7 @@ if (!isset($_SESSION['sessaoemail']) && !isset($_SESSION['sessaosenha'])){sessio
                 <th scope="row"><?=$linha['id']?></th>
                 <td class="text-uppercase"><?=$linha['nome']?></td>
                 <td><?=$linha['email']?></td>
-                <?php if($_SESSION['user']['perfil'] == "Admin"): ?>
+                <?php if($_SESSION['user']['perfil'] == "Administrador"): ?>
                     <td>
                         <a class="btn btn-outline-primary" href="editar.php?id=<?=$linha['id'];?>">Editar
                             <img src="img/pencil-2x.png" alt="">

@@ -6,7 +6,8 @@ $nome  = isset($_POST['nome']) ? $_POST['nome'] : null;
 $email = isset($_POST['email']) ? $_POST['email'] : null;
 $senha = isset($_POST['senha']) ? $_POST['senha'] : null;
 $id    = isset($_POST['id']) ? $_POST['id'] : null;
-
+$datas  = $_POST['datas'];
+$hora  = $_POST['hora'];
 //$id    = filter_input(INPUT_POST, 'id',    FILTER_SANITIZE_NUMBER_INT);
 //$nome  = filter_input(INPUT_POST, 'nome',  FILTER_SANITIZE_STRING);
 //$email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
@@ -24,10 +25,12 @@ exit;
 
 // atualiza o banco
 
-$stmt = $conn->prepare("UPDATE pessoa SET nome='$nome', email='$email', senha = '$senha' WHERE id = '$id'");
+$stmt = $conn->prepare("UPDATE pessoa SET nome='$nome', email='$email', senha = '$senha', datas = '$datas', hora = '$hora' WHERE id = '$id'");
 $stmt->bindParam(':nome', $nome);
 $stmt->bindParam(':email', $email);
 $stmt->bindParam(':senha', $senha);
+$stmt->bindParam(':datas', $datas);
+$stmt->bindParam(':hora', $hora);
 $stmt->bindParam(':id', $id, PDO::PARAM_INT);
 
 if ($stmt->execute()) {

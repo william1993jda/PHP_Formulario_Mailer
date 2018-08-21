@@ -59,6 +59,18 @@ $("#buscar").click(function () {
     buscar($("#palavra").val())
 });
 
+var myVar = setInterval(myTimer ,1000);
+
+function myTimer() {
+    var d = new Date(), displayDate;
+    if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
+        displayDate = d.toLocaleTimeString('pt-BR');
+    } else {
+        displayDate = d.toLocaleTimeString('pt-BR', {timeZone: 'America/Sao_Paulo'});
+    }
+    document.getElementById("demo").innerHTML = displayDate;
+}
+
 $(document).ready(function() {
     $("#interna").validate({
         rules: {
@@ -81,7 +93,7 @@ $(document).ready(function() {
             Assunto: {
                 required: true
             },
-            Mensagem:{
+            Mensagem: {
                 required: true
             }
         }
@@ -116,15 +128,15 @@ $(document).ready(function () {
         let email = $("#email").val();
         let senha = $("#senha").val();
 
-        if (nome == ""){
+        if (nome == "") {
             alert('O campo nome precisa ser preenchido!');
             return false;
         }
-        if (email == ""){
+        if (email == "") {
             alert('O campo E-mail precisa ser preenchido!');
             return false;
         }
-        if (senha == ""){
+        if (senha == "") {
             alert('O campo Senha precisa ser preenchido!');
             return false;
         }
@@ -184,6 +196,41 @@ $(document).ready(function () {
 //         document.getElementById("Email").style.backgroundColor = "rgba(255,0,0,0.1)";
 //     }
 // }
+
+$(document).ready(function(){
+    $('#login-alert').hide(); //Esconde o elemento com id errolog
+    $('#login-form').submit(function(){ //Ao submeter formulário
+
+        let email = $('#Email').val(); //Pega valor do campo email
+        let senha = $('#Senha').val(); //Pega valor do campo senha
+
+        if (email == '' || senha == ''){
+
+            $('#exampleModalCenter').modal('toggle').css('background-color', 'rgb(255, 0, 0)');
+            // $('#exampleModalCenter').css('background-color', 'red');
+            // alert('Por favor, preencha os dados corretamente!');
+            return false;
+        }
+
+        $.ajax({ //Função AJAX
+            url: "login.php", //Arquivo php
+            type: "post", //Método de envio
+            data: "email=" + email + "&senha=" + senha,	//Dados
+
+            success: function (result) { //Sucesso no AJAX
+                if (result === 1) {
+                    location.href = 'Formulario.php';	//Redireciona
+                } else {
+                    $('#exampleModalCenter').modal('toggle').css('background-color', 'rgb(255, 0, 0)');
+                    $('#modalErro').text('Digita direito doente!');
+                    // $('#login-alert').show(); //Informa o erro
+                }
+            }
+        });
+    });
+
+    return false; //Evita que a página seja atualizada
+});
 
 function redefinirMsg(){
     let error = document.querySelector('#error-email');
