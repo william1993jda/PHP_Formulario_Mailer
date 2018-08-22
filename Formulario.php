@@ -1,7 +1,9 @@
 <?php
+
 require_once 'layout.php';
 require_once 'login.php';
 if (!isset($_SESSION['sessaoemail']) && !isset($_SESSION['sessaosenha'])){session_destroy();header('location: aviso.php');}
+
 ?>
     <div class="row">
         <div class="col-sm">

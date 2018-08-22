@@ -3,7 +3,6 @@
 require_once 'db.php';
 require_once 'login.php';
 
-
 if ($_POST) {
 
     $nomeC  = $_POST['nome'];
@@ -12,11 +11,17 @@ if ($_POST) {
     $datas  = $_POST['datas'];
     $hora   = $_POST['hora'];
     $perfil = $_POST['perfil'];
+    $confirmarSenha = $_POST['confirmarSenha'];
 
     $query = ('SELECT * FROM pessoa WHERE email = :email');
     $stmt  = $conn->prepare($query);
     $stmt->bindValue(":email", $email, PDO::PARAM_STR);
     $stmt->execute();
+
+    if($senha != $confirmarSenha){
+        header('location: cadastro.php');
+        die;
+    }
 
     if ($stmt->rowCount($query) > 0) {
         header('location: emailJacadastrado.php');

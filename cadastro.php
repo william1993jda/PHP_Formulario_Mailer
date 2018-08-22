@@ -49,19 +49,34 @@
     <br>
     <div class="control-group float-right">
         <a class="btn btn-outline-primary" href="javascript:void(0)" onClick="history.go(-1); return false;">Voltar</a>&nbsp;
-        <button type="submit" class="btn btn-outline-success" onClick="comparePassoword()">Cadastrar</button>
+        <button type="submit" class="btn btn-outline-success" onClick="conferir();">Cadastrar</button>
     </div>
 </form>
 
 <script>
-    function comparePassoword(){
-        let senha = document.getElementById('senha').value;
-        let confirmarSenha = document.getElementById('confirmarSenha').value;
-        if (senha != confirmarSenha) {
-            alert("SENHAS DIFERENTES!\nFAVOR DIGITAR SENHAS IGUAIS");
-        }else {
-            alert("SENHA CORRETAS");
+    function conferir() {
+
+        let senha = $("#senha").val();
+        let confirmarSenha = $("#confirmarSenha").val();
+
+        if (senha != confirmarSenha){
+            alert("As senhas estão diferentes!");
+            return false;
+
         }
+
+        return true;
     }
+
+    // function conferir(){
+    //     let senha = document.getElementById('senha').value;
+    //     let confirmarSenha = document.getElementById('confirmarSenha').value;
+    //     if (senha != confirmarSenha) {
+    //         alert("SENHAS DIFERENTES!\nFAVOR DIGITAR SENHAS IGUAIS");
+    //     }else {
+    //         alert("SENHA CORRETAS");
+    //     }
+    //     return false;
+    // }
 </script>
 <?php require_once 'Footer.php';?>
