@@ -197,14 +197,14 @@ $(document).ready(function () {
 //     }
 // }
 
-$(document).ready(function(){
+$(document).ready(function() {
     $('#login-alert').hide(); //Esconde o elemento com id errolog
-    $('#login-form').submit(function(){ //Ao submeter formulário
+    $('#login-form').submit(function() { //Ao submeter formulário
 
         let email = $('#Email').val(); //Pega valor do campo email
         let senha = $('#Senha').val(); //Pega valor do campo senha
 
-        if (email == '' || senha == ''){
+        if (email == '' || senha == '') {
 
             $('#exampleModalCenter').modal('toggle').css('background-color', 'rgb(255, 0, 0)');
             // $('#exampleModalCenter').css('background-color', 'red');

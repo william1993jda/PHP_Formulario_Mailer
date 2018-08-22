@@ -1,6 +1,8 @@
-<?php require_once 'dataHora.php';?>
-<?php require_once 'layout.php';?>
-<?php require_once 'consultas.php';?>
+<?php
+require_once 'dataHora.php';
+require_once 'layout.php';
+require_once 'consultas.php';
+?>
 
 <form style="margin-top: 10%;background-color: #343A40; color: #FFFFFF;" action="insert.php" id="form" method="post" class="col-6 jumbotron animated bounceIn">
     <img class="float-right" style="width: 65px; margin-top: -55px;" src="img/icon-php1-1.png" alt="">
@@ -55,16 +57,13 @@
 
 <script>
     function conferir() {
-
         let senha = $("#senha").val();
         let confirmarSenha = $("#confirmarSenha").val();
 
         if (senha != confirmarSenha){
             alert("As senhas estão diferentes!");
             return false;
-
         }
-
         return true;
     }
 
