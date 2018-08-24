@@ -55,9 +55,12 @@ function buscar (palavra) {
     });
 }
 
+
 $("#buscar").click(function () {
     buscar($("#palavra").val())
 });
+
+/*Exibe hora certa*/
 
 var myVar = setInterval(myTimer ,1000);
 
@@ -69,7 +72,36 @@ function myTimer() {
         displayDate = d.toLocaleTimeString('pt-BR', {timeZone: 'America/Sao_Paulo'});
     }
     document.getElementById("demo").innerHTML = displayDate;
+
 }
+
+
+/* Confirmar senha */
+$("#form").submit(function() {
+    let senha = $("#senha").val();
+    let confirmarSenha = $("#confirmarSenha").val();
+
+    if (senha != confirmarSenha){
+        $('#exampleModalCenter').modal('toggle').addClass('bounceIn');
+        console.log("Senha-> " + senha);
+        console.log("Confirmar senha-> " + confirmarSenha);
+        return false;
+    }
+    // e.preventDefault();//evito o submit do form ao apetar o enter..
+});
+
+$("#form-editar").submit(function() {
+    let senha = $("#senha").val();
+    let confirmarSenha = $("#confirmarSenha").val();
+
+    if (senha != confirmarSenha){
+        $('#exampleModalCenter').modal('toggle').addClass('bounceIn');
+        console.log("Senha-> " + senha);
+        console.log("Confirmar senha-> " + confirmarSenha);
+        return false;
+    }
+    // e.preventDefault();//evito o submit do form ao apetar o enter..
+});
 
 $(document).ready(function() {
     $("#interna").validate({
@@ -118,8 +150,13 @@ $(document).ready(function () {
             senha: {
                 required: true,
                 maxlength: 12,
-                minlength: 6
-            }
+                minlength: 3
+            },
+            confirmarSenha: {
+                required: true,
+                maxlength: 12,
+                minlength: 3
+            },
         }
     });
 
@@ -127,17 +164,26 @@ $(document).ready(function () {
         let nome  = $("#nome").val();
         let email = $("#email").val();
         let senha = $("#senha").val();
+        let confirmarSenha = $("#confirmarSenha").val();
 
         if (nome == "") {
-            alert('O campo nome precisa ser preenchido!');
+            $('#exampleModalCenter').modal('toggle');
+            $('#modalCadastro').text('Preencha o campo nome!');
             return false;
         }
         if (email == "") {
-            alert('O campo E-mail precisa ser preenchido!');
+            $('#exampleModalCenter').modal('toggle');
+            $('#modalCadastro').text('Preencha o campo E-mail!');
             return false;
         }
         if (senha == "") {
-            alert('O campo Senha precisa ser preenchido!');
+            $('#exampleModalCenter').modal('toggle');
+            $('#modalCadastro').text('Preencha o campo senha!');
+            return false;
+        }
+        if (confirmarSenha == "") {
+            $('#exampleModalCenter').modal('toggle');
+            $('#modalCadastro').text('Preencha o campo confirmar senha!');
             return false;
         }
     });

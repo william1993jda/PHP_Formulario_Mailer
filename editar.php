@@ -64,7 +64,7 @@ if ($stmt->execute()) {
     <h4>Insira os dados para atualizar</h4>
     <hr>
 
-    <input type="hidden" name="datas" id="datas" value="<?=date('Y-m-d',$unpack0[7]);?>">
+    <input type="hidden" name="datas" id="datas" value="<?=$today=date("d.m.y");?>">
     <input type="hidden" name="hora" id="hora" value="<?=date('H:i:s',$unpack0[7]);?>">
 
     <input type="hidden" name="id" id="id" value="<?=$stmt['id'];?>">
@@ -81,7 +81,11 @@ if ($stmt->execute()) {
 
     <div class="form-group">
         <label for="senha">Senha:</label>
-        <input type="text" name="senha" class="form-control" value="<?=$stmt['senha']?>" id="senha" placeholder="******">
+        <input type="password" name="senha" class="form-control" value="<?=$stmt['senha']?>" id="senha" placeholder="******">
+    </div>
+    <div class="form-group">
+        <label for="senha">Confirmar senha:</label>
+        <input type="password" name="confirmarSenha" class="form-control" id="confirmarSenha" placeholder="******">
     </div>
     <br>
     <div class="control-group float-right">
@@ -89,4 +93,24 @@ if ($stmt->execute()) {
         <input type="submit" value="Salvar" class="btn btn-outline-success">
     </div>
 </form>
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <img style="width: 60px" src="img/exclamation-mark.svg" alt="">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-danger" id="modalCadastro" role="alert">
+                        O campo <strong>senha</strong> e <strong>confirmar senha</strong>, devem ser iguais!
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 <?php require_once 'Footer.php'?>

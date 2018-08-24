@@ -138,6 +138,12 @@ textarea {
     float: right;
 }
 
+#confirmarSenha-error{
+    color: red;
+    font-size: 1rem;
+    float: right;
+}
+
 #email-error {
     color: red;
     font-size: 1rem;

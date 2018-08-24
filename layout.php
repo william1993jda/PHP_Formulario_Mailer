@@ -75,7 +75,7 @@ require_once 'dataHora.php';
                 </li>
                 &nbsp;
                 <li>
-                    <div id="demo"><?=date('d-m-y',$unpack0[7]);?></div>
+                    <div id="demo"><?=$today=date("d.m.y");?></div>
                 </li>
             </ul>
         <?php endif; ?>
