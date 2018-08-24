@@ -76,25 +76,13 @@ function myTimer() {
 }
 
 
-/* Confirmar senha */
-$("#form").submit(function() {
-    let senha = $("#senha").val();
-    let confirmarSenha = $("#confirmarSenha").val();
-
-    if (senha != confirmarSenha){
-        $('#exampleModalCenter').modal('toggle').addClass('bounceIn');
-        console.log("Senha-> " + senha);
-        console.log("Confirmar senha-> " + confirmarSenha);
-        return false;
-    }
-    // e.preventDefault();//evito o submit do form ao apetar o enter..
-});
+/* editar Confirmar senha */
 
 $("#form-editar").submit(function() {
     let senha = $("#senha").val();
     let confirmarSenha = $("#confirmarSenha").val();
 
-    if (senha != confirmarSenha){
+    if (senha !== confirmarSenha){
         $('#exampleModalCenter').modal('toggle').addClass('bounceIn');
         console.log("Senha-> " + senha);
         console.log("Confirmar senha-> " + confirmarSenha);
@@ -127,6 +115,21 @@ $(document).ready(function() {
             },
             Mensagem: {
                 required: true
+            }
+        }
+    });
+});
+
+/* Formulario de login */
+$(document).ready(function() {
+    $("#login-form").validate({
+        rules: {
+            email: {
+                required: true,
+                email: true
+            },
+            senha: {
+                required: true,
             }
         }
     });
@@ -186,6 +189,14 @@ $(document).ready(function () {
             $('#modalCadastro').text('Preencha o campo confirmar senha!');
             return false;
         }
+
+        if (senha !== confirmarSenha){
+            $('#exampleModalCenter').modal('toggle').addClass('bounceIn');
+            $('#modalCadastro').text('xablau');
+            console.log("Senha-> " + senha);
+            console.log("Confirmar senha-> " + confirmarSenha);
+            return false;
+        }
     });
 });
 
@@ -232,16 +243,16 @@ $(document).ready(function () {
     });
 });
 
-// function validarEmail(){
-//     let email = document.querySelector('#Email');
-//     let error = document.querySelector('#error-email');
-//
-//     if(!email.checkValidity()){
-//         // error.innerHTML = "Email inválido.";
-//         document.getElementById("Email").style.borderColor = "red";
-//         document.getElementById("Email").style.backgroundColor = "rgba(255,0,0,0.1)";
-//     }
-// }
+function validarEmail(){
+    let email = document.querySelector('#Email');
+    let error = document.querySelector('#error-email');
+
+    if(!email.checkValidity()){
+        // error.innerHTML = "Email inválido.";
+        document.getElementById("Email").style.borderColor = "red";
+        document.getElementById("Email").style.backgroundColor = "rgba(255,0,0,0.1)";
+    }
+}
 
 $(document).ready(function() {
     $('#login-alert').hide(); //Esconde o elemento com id errolog

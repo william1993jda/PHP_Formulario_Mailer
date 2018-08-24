@@ -112,6 +112,11 @@ textarea {
     color: #fd7e14;
 }
 
+#Senha-error{
+    color: red;
+    font-size: 1rem;
+}
+
 #Email-error {
     color: red;
     font-size: 1rem;

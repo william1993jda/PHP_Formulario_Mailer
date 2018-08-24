@@ -39,7 +39,6 @@ require_once 'consultas.php';
             <label for="senha">Senha:</label>
             <input type="password" name="senha" class="form-control" id="senha" placeholder="******">
         </div>
-
         <div class="form-group">
             <label for="senha">Confirmar senha:</label>
             <input type="password" name="confirmarSenha" class="form-control" id="confirmarSenha" placeholder="******">
@@ -51,7 +50,42 @@ require_once 'consultas.php';
         </div>
     </form>
 
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content bounceIn">
+                <div class="modal-header">
+                    <img style="width: 60px" src="img/exclamation-mark.svg" alt="">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-danger" id="modalCadastro" role="alert">
+                        <strong>Senha</strong> e <strong>Confirmar senha,</strong> não coincidem!
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
+
+        // $("#form").submit(function() {
+        //     let senha = $("#senha").val();
+        //     let confirmarSenha = $("#confirmarSenha").val();
+        //
+        //     if (senha != confirmarSenha){
+        //         $('#exampleModalCenter').modal('toggle').addClass('bounceIn');
+        //         console.log("Senha-> " + senha);
+        //         console.log("Confirmar senha-> " + confirmarSenha);
+        //         return false;
+        //     }
+        //     // e.preventDefault();//evito o submit do form ao apetar o enter..
+        // });
+
 
         // $(document).ready(function(){
 
