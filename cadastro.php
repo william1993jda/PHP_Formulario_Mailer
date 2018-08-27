@@ -60,8 +60,8 @@ require_once 'consultas.php';
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="alert alert-danger" id="modalCadastro" role="alert">
-                        <strong>Senha</strong> e <strong>Confirmar senha,</strong> não coincidem!
+                    <div class="alert alert-danger" role="alert">
+                       <div id="aviso"><strong>Senha</strong> e <strong>Confirmar senha,</strong> não coincidem!</div>
                     </div>
                 </div>
                 <div class="modal-footer">

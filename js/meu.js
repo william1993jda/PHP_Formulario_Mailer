@@ -75,7 +75,6 @@ function myTimer() {
 
 }
 
-
 /* editar Confirmar senha */
 
 $("#form-editar").submit(function() {
@@ -171,28 +170,28 @@ $(document).ready(function () {
 
         if (nome == "") {
             $('#exampleModalCenter').modal('toggle');
-            $('#modalCadastro').text('Preencha o campo nome!');
+            $('#aviso').text('Preencha o campo nome!');
             return false;
         }
         if (email == "") {
             $('#exampleModalCenter').modal('toggle');
-            $('#modalCadastro').text('Preencha o campo E-mail!');
+            $('#aviso').text('Preencha o campo E-mail!');
             return false;
         }
         if (senha == "") {
             $('#exampleModalCenter').modal('toggle');
-            $('#modalCadastro').text('Preencha o campo senha!');
+            $('#aviso').text('Preencha o campo senha!');
             return false;
         }
         if (confirmarSenha == "") {
             $('#exampleModalCenter').modal('toggle');
-            $('#modalCadastro').text('Preencha o campo confirmar senha!');
+            $('#aviso').text('Preencha o campo confirmar senha!');
             return false;
         }
 
         if (senha !== confirmarSenha){
             $('#exampleModalCenter').modal('toggle').addClass('bounceIn');
-            $('#modalCadastro').text('xablau');
+            $('#aviso').html("<strong>Senha</strong> e <strong>Confirmar senha,</strong> não coincidem!");
             console.log("Senha-> " + senha);
             console.log("Confirmar senha-> " + confirmarSenha);
             return false;
